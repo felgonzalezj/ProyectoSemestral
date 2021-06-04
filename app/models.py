@@ -4,8 +4,7 @@ from django.db import models
 
 class TipoProducto(models.Model):
     tipo = models.CharField(max_length=40)
-
-
+    
     def __str__(self):
         return self.tipo
         

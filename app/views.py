@@ -31,7 +31,7 @@ def Productos(request):
 
 def agregar_producto(request):
     datos = {
-        'form' :  ProductoForm(),
+        'form' :  ProductoForm()
     }
 
     if request.method == 'POST':
