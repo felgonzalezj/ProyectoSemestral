@@ -45,11 +45,11 @@ def agregar_producto(request):
 def modificar_producto(request,id):
     producto = Producto.objects.get(id=id)
     datos = {
-        'form' :  ProductoForm(instance=Producto)
+        'form' :  ProductoForm(instance=producto)
     }
 
     if request.method == 'POST':
-        formulario = ProductoForm(data=request.POST,instance=Producto)
+        formulario = ProductoForm(data=request.POST,instance=producto)
         if formulario.is_valid():
             formulario.save()
             datos['mensaje'] = "Producto modificado correctamente"
