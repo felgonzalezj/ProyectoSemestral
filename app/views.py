@@ -2,6 +2,8 @@ from app.forms import ProductoForm
 from app.models import Producto
 from django.http import request
 from django.shortcuts import redirect, render
+from django.core.paginator import Paginator
+from django.http import Http404
 
 # Create your views here.
 
@@ -23,8 +25,17 @@ def Ofertas(request):
 
 def Productos(request):
     ProductosAll = Producto.objects.all()
+    page = request.GET.get('page',1)
+
+    try:
+        paginator = Paginator(ProductosAll, 4)
+        ProductosAll = paginator.page(page)
+    except:
+        raise Http404
+
     datos = {
-        'listasProductos' :  ProductosAll
+        'listasProductos' :  ProductosAll,
+        'paginator' : paginator
     }
     return render(request, 'app/Productos.html', datos)
 
@@ -35,7 +46,7 @@ def agregar_producto(request):
     }
 
     if request.method == 'POST':
-        formulario = ProductoForm(request.POST)
+        formulario = ProductoForm(request.POST, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
             datos['mensaje'] = "Producto guardado correctamente"
@@ -49,7 +60,7 @@ def modificar_producto(request,id):
     }
 
     if request.method == 'POST':
-        formulario = ProductoForm(data=request.POST,instance=producto)
+        formulario = ProductoForm(data=request.POST,instance=producto, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
             datos['mensaje'] = "Producto modificado correctamente"
