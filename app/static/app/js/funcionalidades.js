@@ -21,12 +21,23 @@ function confirmarDelete(id){
       })
 }
 
-function confirmarGuardar(){
+function confirmarModificar(){
     Swal.fire({
         position: 'top-end',
         icon: 'success',
-        title: 'Your work has been saved',
+        title: 'Producto Modificado',
         showConfirmButton: false,
         timer: 1500
+        
       })
+}
+
+function productoAgregado(){
+  Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Producto Agregado',
+      showConfirmButton: false,
+      timer: 1500
+    })
 }

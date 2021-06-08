@@ -15,11 +15,16 @@
         <table>
             {{ form|crispy }}
         </table>
-        <input type="submit" class="btn btn-succes" value="Modificar">
+        <input type="submit" class="btn btn-succes" onclick="confirmarModificar()" value="Modificar">
         <input type="reset" class="btn btn-danger" value="Limpiar">
     </form>
-    {{ mensaje }}
+
     </div>
     <div class="col-sm-2"></div>
 </div>
+
+{% block javascript %}
+<script src="{% static 'app/js/funcionalidades.js' %}"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% endblock %}
 {% endblock %}
