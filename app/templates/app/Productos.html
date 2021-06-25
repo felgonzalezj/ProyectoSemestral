@@ -34,8 +34,12 @@
                 <p class="card-text"> {{aux.nombre}} </p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
+                    {% if perms.app.change_producto %}
                     <a href="{% url 'modificar_producto' aux.id %}" class="btn btn-info">Modificar</a>
+                    {% endif %}
+                    {% if perms.app.delete_producto %}
                     <a onclick="confirmarDelete({{ aux.id }})" class="btn btn-danger">Eliminar</a>
+                    {% endif %}
                   </div>
                   <small class="text-muted">Precio: {{aux.precio}}</small>
                 </div>

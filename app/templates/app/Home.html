@@ -7,7 +7,9 @@
 <section class="banner">
   <div class="banner-img"></div>
   <h1>Bienvenido a Happy Pet</h1>
+  {% if user.is_authenticated %}
   <a href="{% url 'Productos'%}" class="banner-btn">Productos</a>
+  {% endif %}
 </section>
 
 {% endblock %}
