@@ -1,0 +1,7 @@
+# pip install -r requirements.txt
+
+django 
+pillow
+django-crispy-forms
+django-rest-framework
+cx_oracle

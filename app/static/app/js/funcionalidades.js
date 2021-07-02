@@ -21,15 +21,26 @@ function confirmarDelete(id){
       })
 }
 
-function confirmarModificar(){
-    Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Producto Modificado',
-        showConfirmButton: false,
-        timer: 1500
-        
-      })
+function confirmarModificar(id){
+  Swal.fire({
+      title: 'Esta seguro de modificar?',
+      text: "Usted no podra revertir esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, Modificar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Modificado!',
+          'Su producto ha sido modificado.',
+          'success'
+        ).then(function(){
+            window.location.href = "/modificar-producto/"+id+"/"
+        })
+      }
+    })
 }
 
 function productoAgregado(){

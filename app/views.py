@@ -6,8 +6,15 @@ from django.shortcuts import redirect, render
 from django.core.paginator import Paginator
 from django.http import Http404
 from django.contrib.auth.decorators import permission_required
+from rest_framework import viewsets
+from .serializers import ProductoSerializer
 
 # Create your views here.
+
+class ProductoViewSet(viewsets.ModelViewSet):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
+    
 
 def Home(request):
     return render(request, 'app/Home.html')
@@ -53,6 +60,8 @@ def agregar_producto(request):
             formulario.save()
             
             datos['mensaje'] = "Producto guardado correctamente"
+            
+        datos['form'] = formulario
     return render(request, 'app/agregar_productos.html', datos)
 
 @permission_required('app.change_producto')
