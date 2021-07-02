@@ -5,3 +5,4 @@ pillow
 django-crispy-forms
 django-rest-framework
 cx_oracle
+django-pwa

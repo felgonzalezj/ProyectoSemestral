@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'app.apps.AppConfig',
     'crispy_forms',
     'rest_framework',
+    'pwa',
 ]
 
 MIDDLEWARE = [
@@ -139,3 +140,24 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+PWA_APP_NAME = "Happy pet"
+PWA_APP_DESCRIPTION = "Tienda para Mascotas"
+PWA_APP_THEME_COLOR = "#3477f5"
+PWA_APP_BACKGROUND_COLOR = "#6699f7"
+
+PWA_APP_ICONS = [
+{
+    "src": "/static/app/img/logoquienessomos.png",
+    "sizes": "236x236"
+}
+]
+
+PWA_APP_ICONS_APPLE = [
+{
+    "src": "/static/app/img/logoquienessomos.png",
+    "sizes": "236x236"
+}
+]
+
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, "serviceworker.js")
