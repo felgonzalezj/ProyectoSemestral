@@ -1,5 +1,5 @@
 from app.forms import ProductoForm
-from app.models import Producto, TipoProducto
+from app.models import Producto, TipoProducto, Suscriptor
 from django.contrib import admin
 
 # Register your models here.
@@ -13,3 +13,4 @@ class ProductoAdmin(admin.ModelAdmin):
 
 admin.site.register(TipoProducto)
 admin.site.register(Producto,ProductoAdmin)
+admin.site.register(Suscriptor)

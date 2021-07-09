@@ -6,6 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from .validators import TamanoMaximoValidator
+from .models import Suscriptor
 class ProductoForm(ModelForm):
 
     nombre = forms.CharField(min_length=5, max_length=25)
@@ -30,3 +31,10 @@ class UsuarioCreationForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username','first_name','last_name','email','password1','password2']
+
+
+class SuscriptorForm(ModelForm):
+    monto_donacion = forms.IntegerField(min_value=2000)
+    class Meta:
+        model = Suscriptor
+        fields = ['nombre','correo','tipo_pago','avisos','monto_donacion']

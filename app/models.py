@@ -19,3 +19,24 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.nombre
+
+opciones_pago = [
+    [0, "debito"],
+    [1, "credito"],
+    [2, "transferencia"],
+]
+
+opciones_aviso = [
+    [0, "si"],
+    [1, "no"],
+]
+
+class Suscriptor(models.Model):
+    nombre = models.CharField(max_length=50)
+    correo = models.EmailField()
+    tipo_pago = models.IntegerField(choices=opciones_pago)
+    avisos = models.IntegerField(choices=opciones_aviso)
+    monto_donacion = models.IntegerField()
+
+    def __str__(self):
+        return self.nombre

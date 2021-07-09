@@ -41,7 +41,11 @@
                     <a onclick="confirmarDelete({{ aux.id }})" class="btn btn-danger">Eliminar</a>
                     {% endif %}
                   </div>
+                  {% if suscriptor %}
                   <small class="text-muted">Precio: {{aux.precio}}</small>
+                  {% else %}
+                  <small class="text-muted">Precio: {{aux.precio}}</small>
+                  {% endif %}
                 </div>
               </div>
             </div>

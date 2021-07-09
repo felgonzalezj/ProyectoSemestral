@@ -17,4 +17,5 @@ urlpatterns = [
     path('eliminar-producto/<id>/', eliminar_producto, name="eliminar_producto"),
     path('registro-user/', registro_user, name="registro_user"),
     path('api/', include(router.urls)),
+    path('Suscripcion/', suscriptor, name="Suscripcion"),
 ]

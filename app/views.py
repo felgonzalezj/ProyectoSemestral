@@ -8,6 +8,7 @@ from django.http import Http404
 from django.contrib.auth.decorators import permission_required
 from rest_framework import viewsets
 from .serializers import ProductoSerializer
+from .forms import SuscriptorForm
 
 # Create your views here.
 
@@ -101,3 +102,18 @@ def registro_user(request):
         datos['form'] = formulario
 
     return render(request, 'registration/singin.html', datos)
+
+
+def suscriptor(request):
+    data = {
+        'form': SuscriptorForm()
+    }
+
+    if request.method == 'POST':
+        formulario = SuscriptorForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+        else:
+            data['form'] = formulario
+
+    return render(request, 'app/suscriptor.html', data)
