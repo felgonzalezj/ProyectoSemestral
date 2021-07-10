@@ -21,14 +21,14 @@ class Producto(models.Model):
         return self.nombre
 
 opciones_pago = [
-    [0, "debito"],
-    [1, "credito"],
-    [2, "transferencia"],
+    [0, "Debito"],
+    [1, "Credito"],
+    [2, "Transferencia"],
 ]
 
 opciones_aviso = [
-    [0, "si"],
-    [1, "no"],
+    [0, "Si"],
+    [1, "No"],
 ]
 
 class Suscriptor(models.Model):

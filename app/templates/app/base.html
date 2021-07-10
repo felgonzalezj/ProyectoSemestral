@@ -40,6 +40,7 @@
             <li class="nav-item ">
               <a class="nav-link" href="{% url 'index'%}">Quienes somos <span class="sr-only">(current)</span></a>
             </li>
+            
             {% if perms.app.view_producto %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'Productos'%}">Productos</a>
