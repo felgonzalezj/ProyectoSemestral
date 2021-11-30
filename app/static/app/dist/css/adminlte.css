@@ -7151,13 +7151,14 @@ button.bg-success:focus {
 }
 
 .bg-info {
-  background-color: #17a2b8 !important;
+  background-color: #b86d17 !important;
+  
 }
 
 a.bg-info:hover, a.bg-info:focus,
 button.bg-info:hover,
 button.bg-info:focus {
-  background-color: #117a8b !important;
+  background-color: #b86d17 !important;
 }
 
 .bg-warning {
@@ -46255,7 +46256,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .bg-info {
-  background-color: #17a2b8 !important;
+  background-color: #b86d17 !important;
 }
 
 .bg-info,

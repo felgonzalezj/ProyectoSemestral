@@ -1,6 +1,6 @@
 
 .footer {
-    background-color: rgb(73, 158, 192);
+    background-color: #b86d17;
     color: white;
     left: 0;
     bottom: 0;
@@ -60,7 +60,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/banner.jpg');
+    background-image: url('../img/Estapasapiola.jpg');
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center;
@@ -84,7 +84,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/banner2.jpg');
+    background-image: url('../img/bici2.jpg');
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center;
@@ -116,7 +116,7 @@ section {
     color: rgb(255, 255, 255);
     text-transform: uppercase;
     padding: 15px 30px;
-    background: rgb(20, 213, 220);
+    background: #b86d17;
     border-radius: 50px;
 }
 
@@ -156,7 +156,7 @@ section {
 
 .estilito{
     FONT-WEIGHT: 200;
-background: #17a2b8;
+background: #b86d17;
 margin-top: -20px;
 
 }

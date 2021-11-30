@@ -22,7 +22,7 @@
 
     {% progressive_web_app_meta %}
     
-    <nav class="navbar navbar-expand-lg navbar-info bg-info .navbar-expand{-sm|-md|-lg|-xl}">
+    <nav class="navbar navbar-expand-lg navbar-info  .navbar-expand{-sm|-md|-lg|-xl}" >
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon">
             
@@ -53,12 +53,12 @@
             {% endif %}
 
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'Suscripcion'%}">Suscripcion</a>
+              <a class="nav-link" href="{% url 'Suscripcion'%}">Pedir Bicicleta</a>
             </li>
 
             {% if user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'logout' %}">Cerrar Secion</a>
+              <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesion</a>
             </li>
             {% else %}
             <li class="nav-item">

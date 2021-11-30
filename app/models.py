@@ -27,8 +27,8 @@ opciones_pago = [
 ]
 
 opciones_aviso = [
-    [0, "Si"],
-    [1, "No"],
+    [0, "Disponible en Estacion Baquedano"],
+    [1, "Disponible en Los Dominicos"],
 ]
 
 class Suscriptor(models.Model):

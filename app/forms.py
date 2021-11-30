@@ -10,8 +10,8 @@ from .models import Suscriptor
 class ProductoForm(ModelForm):
 
     nombre = forms.CharField(min_length=5, max_length=25)
-    precio = forms.IntegerField(min_value=3000)
-    oferta = forms.IntegerField(min_value=2000)
+    precio = forms.IntegerField(min_value=10000,max_value=10000)
+    oferta = forms.IntegerField(min_value=9000,max_value=9000)
     imagen = forms.ImageField(validators=[TamanoMaximoValidator(1)], required=False)
 
     def clean_nombre(self):
@@ -34,7 +34,8 @@ class UsuarioCreationForm(UserCreationForm):
 
 
 class SuscriptorForm(ModelForm):
-    monto_donacion = forms.IntegerField(min_value=2000)
+    monto_donacion = forms.IntegerField(min_value=10000, max_value=10000)
+   
     class Meta:
         model = Suscriptor
         fields = ['nombre','correo','tipo_pago','avisos','monto_donacion']
